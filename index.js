@@ -5,6 +5,11 @@ const Joi = require("joi");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
+// database
+const mongo = require('./db')
+
+mongo
+
 // import middleware functions
 const logger = require("./middleware/logger");
 
