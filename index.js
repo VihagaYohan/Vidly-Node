@@ -14,6 +14,7 @@ mongo
 const logger = require("./middleware/logger");
 
 const genres = require("./routes/genres");
+const customers = require('./routes/customers')
 
 const app = express();
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use(morgan("tiny"));
 
 // routes
 app.use("/api/genres", genres);
+app.use('/api/customers',customers)
 
 // configuration
 console.log(`Application name : ${config.get("name")}`);
