@@ -25,4 +25,5 @@ const validationGenre = (genre) => {
 module.exports = {
   Genre,
   validationGenre,
+  genreSehama
 };

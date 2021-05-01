@@ -6,15 +6,16 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 
 // database
-const mongo = require('./db')
+const mongo = require("./db");
 
-mongo
+mongo;
 
 // import middleware functions
 const logger = require("./middleware/logger");
 
 const genres = require("./routes/genres");
-const customers = require('./routes/customers')
+const customers = require("./routes/customers");
+const movies = require("./routes/movies");
 
 const app = express();
 app.use(express.json());
@@ -25,7 +26,8 @@ app.use(morgan("tiny"));
 
 // routes
 app.use("/api/genres", genres);
-app.use('/api/customers',customers)
+app.use("/api/customers", customers);
+app.use("/api/movies", movies);
 
 // configuration
 console.log(`Application name : ${config.get("name")}`);
